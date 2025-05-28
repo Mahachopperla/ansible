@@ -10,6 +10,7 @@
     ansible.builtin.service:
     name: nginx
     state: started
+    enabled: yes
 
 # in inventory we have multiple servers few may have redhat servers and few ubuntu
 # in redhat package installation we use dnf
