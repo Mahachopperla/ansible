@@ -3,14 +3,14 @@
   tasks:
   - name: nginx install
     ansible.builtin.package:
-    name: nginx
-    state: present  # present indicates install
+      name: nginx
+      state: present  # present indicates install
 
   - name: nginx start service 
     ansible.builtin.service:
-    name: nginx
-    state: started
-    enabled: yes
+      name: nginx
+      state: started
+      enabled: yes
 
 # in inventory we have multiple servers few may have redhat servers and few ubuntu
 # in redhat package installation we use dnf
