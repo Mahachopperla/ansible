@@ -5,8 +5,7 @@
     ansible.builtin.package:
     name: nginx
     state: present  # present indicates install
-  #once it is installed we need to start service
-  - name: nginx start service
+  - name: nginx start service 
     ansible.builtin.service:
     name: nginx
     state: started
