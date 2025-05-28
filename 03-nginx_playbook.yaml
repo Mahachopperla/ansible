@@ -1,0 +1,17 @@
+- name: nginx installation
+  hosts:  node
+  tasks:
+  - name: nginx installation
+    ansible.builtin.package:
+    name: nginx
+    state: present  # present indicates install
+
+# in inventory we have multiple servers few may have redhat servers and few ubuntu
+# in redhat package installation we use dnf
+# and in ubuntu package installation we use apt
+# if we use specific package codes then onstallation may fail for other family servers
+# so in ansible we have package module which automatically findout which server it is going to install package
+# and based on that server it installs package on that 
+# if we run palybook through redhat servers it takes dnf and if we run through ubuntu it takes apt
+# this is how ansible works
+# ************* it indicates ansible is not homogeneous it's heterogeneous it works on all servers ********
