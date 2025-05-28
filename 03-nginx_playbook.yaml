@@ -5,6 +5,11 @@
     ansible.builtin.package:
     name: nginx
     state: present  # present indicates install
+  #once it is installed we need to start service
+  - name: nginx start service
+    ansible.builtin.service:
+    name: nginx
+    state: started
 
 # in inventory we have multiple servers few may have redhat servers and few ubuntu
 # in redhat package installation we use dnf
