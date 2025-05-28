@@ -1,5 +1,6 @@
 - name: nginx installation
   hosts:  node
+  become: yes  #to install any package normal user should become root user
   tasks:
   - name: nginx install
     ansible.builtin.package:
