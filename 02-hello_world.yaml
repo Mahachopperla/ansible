@@ -1,0 +1,7 @@
+- name: print hello world
+  hosts:  local
+  connection: local #to connect to local server we need to give connection as local so that it wont ask for username and password to run playbook
+  tasks:  
+  - name: print hello world
+    ansible.builtin.debug:
+      msg:  "Hello world"
