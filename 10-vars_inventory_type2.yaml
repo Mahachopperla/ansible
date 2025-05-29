@@ -6,3 +6,14 @@
     - name: vars to inventory
       ansible.builtin.debug:
         msg:  " {{ COURSE }} is instructed by {{ TRAINER }}"
+
+#check inventory file for reference
+
+#[node]
+#172.31.37.29 COURSE=DevOps TRAINER=Siva
+
+# and also to connect to any server other than local server from ansible we need username and password
+# those username and password can also be passed to inventory
+
+#[node]
+#172.31.37.29 COURSE=DevOps TRAINER=Siva ansible_user=ec2-user ansible_password=DevOps321
