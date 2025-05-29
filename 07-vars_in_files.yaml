@@ -1,0 +1,22 @@
+# instead of declaring vars in playbook we can keep them all in separate file and call them whenever it is required.
+
+# This helps to prevent any unwanted changes to variables which may cause errors
+
+#let's write our variables in vars.yaml file
+
+
+- name: accessing variables from files
+  hosts:  local
+  connection: local
+  vars_files:
+    - vars.yaml   #here we can provide any no.of files as list in which we declared our variables.
+  tasks:
+  - name: print course information
+    ansible.builtin.debug:
+      msg:  "Hello {{ COURSE }} trainer is {{ TRAINER }}"
+
+
+# whenever we run this script ansible will check all possible ways to get var information
+# it will notice vars_files and came to clarification that vars are written in files and read them from file
+
+#if we haven't provide any var declaration then ansible will raise an error
