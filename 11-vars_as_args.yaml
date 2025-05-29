@@ -1,0 +1,13 @@
+#instead of all this we can also pass variables as args to yaml files while executing 
+
+- name:  variables via args
+  hosts:  local
+  connection: local
+  tasks:
+    - name: calling vars from args
+      ansible.builtin.debug:
+        msg:  "{{ COURSE }} is being instructed by {{ TRAINER }}"
+
+#if we dont declare variables in any way and directly execute this nrmally then we'll get error instead
+#we can provide values to variables during execution
+
