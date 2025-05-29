@@ -1,0 +1,12 @@
+- name: play-level variables
+  hosts:  local
+  connection: local
+  vars:
+    COURSE: DevOps  #this is equal to COURSE=DevOps in shell
+    TRAINER:  Siva
+  tasks:
+  - name: printing information using variables
+    ansible.builtin.debug:
+      msg:  "Hello this {{ COURSE }} is trained by {{ TRAINER }}"  #in shell we use $var_name to get it's value here we use {{}}
+      #variables should be mentioned within double quotes , only then ansible considers it as variable
+      
