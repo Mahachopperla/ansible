@@ -2,7 +2,7 @@
   hosts:  local
   connection: local
   vars:
-    NUMBER: 50
+    NUMBER: 500
   tasks:
     - name: execute if number is less than or equal to 100
       when: NUMBER < 100
