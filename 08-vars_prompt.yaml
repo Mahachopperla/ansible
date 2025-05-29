@@ -14,6 +14,6 @@
       private:  true        # as pass is private and we need to ensure protection i/m keeping private as true
 
   tasks:
-  - name: this is to print vars from prompt
-    ansible.builtin.debug:
-      msg:  " Hi {{ username }}, your password is {{ password }}"
+    - name: this is to print vars from prompt
+      ansible.builtin.debug:
+        msg:  " Hi {{ username }}, your password is {{ password }}"
