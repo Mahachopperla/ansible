@@ -20,3 +20,5 @@
 # TRAINER=Siva
 
 #note: here we use = instead of :
+
+#if we give local:vars, entire local group can use this variables

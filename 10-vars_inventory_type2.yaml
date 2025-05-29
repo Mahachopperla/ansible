@@ -1,0 +1,8 @@
+# instead of gviing same vars to entire group we can also specify vars for each server in group separately
+
+- name: vars to inventory type2
+  hosts: node
+  tasks:
+    - name: vars to inventory
+      ansible.builtin.debug:
+        msg:  " {{ COURSE }} is instructed by {{ TRAINER }}"
