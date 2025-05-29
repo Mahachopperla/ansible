@@ -5,7 +5,7 @@
   hosts:  local
   connection: local
   vars_promt:
-    - name: username
+    - name: username  #holds value entered by user
       prompt: Please enter your name?
       private:  false       #if we enter private as true then it wont be visbile on terminal. similar to 'read -s' in shell
 
