@@ -1,0 +1,30 @@
+we have multiple ways to declare vars
+
+Let's understand which is given more prefernce when we declare same variables in all possible ways
+
+1. define same variable in all possible locations
+2. run the playbook
+
+once we get to understand which is first preference comment that declaration
+
+3. comment when you understand the preference
+
+and run paybook again, so u will get to know which is given with decond preference.
+
+follow the same until u get to know all preferences
+
+
+************** PREFERENCES *********************
+
+1.  args or command line
+2.  within Task
+3.  File
+4.  Prompt
+5.  Play level
+6.  inventory
+
+it is not mandatory to hardly remember these preferences
+
+just understand 2 things:
+-> first prefernce will be given to command line args
+-> and when variables are declared globally , we can declare them again in task as inheritance and in such situation task is given with priority

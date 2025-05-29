@@ -11,3 +11,8 @@
 #if we dont declare variables in any way and directly execute this nrmally then we'll get error instead
 #we can provide values to variables during execution
 
+# command will be as follows
+
+# ansible-playbook -i inventory.ini 11-vars_as_args.yaml -e COURSE=Ansible -e TRAINER=Maha
+# Output:
+#    "msg": "Ansible is being instructed by Maha"
