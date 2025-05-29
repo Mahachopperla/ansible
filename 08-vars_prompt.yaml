@@ -5,13 +5,13 @@
   hosts:  local
   connection: local
   vars_prompt:
-  - name: username  #holds value entered by user
-    prompt: Please enter your name?
-    private:  false       #if we enter private as true then it wont be visbile on terminal. similar to 'read -s' in shell
+    - name: username  #holds value entered by user
+      prompt: Please enter your name?
+      private:  false       #if we enter private as true then it wont be visbile on terminal. similar to 'read -s' in shell
 
-  - name: password
-    prompt: please enter your password
-    private:  true        # as pass is private and we need to ensure protection i/m keeping private as true
+    - name: password
+      prompt: please enter your password
+      private:  true        # as pass is private and we need to ensure protection i/m keeping private as true
 
   tasks:
   - name: this is to print vars from prompt
