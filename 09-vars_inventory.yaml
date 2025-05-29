@@ -1,0 +1,22 @@
+#we can also pass variables by default to inventory
+
+- name: variables from inventory
+  hosts:  local
+  connection: local
+  tasks:
+    - name: variables from inventory
+      ansible.builtin.debug:
+        msg:  "hi ... this {{ COURSE }} is lectured by {{ TRAINER }}"
+
+
+#basically the above play will fail and raise error if we run it directly
+#instead provide variables from inventory
+#go to inventory and declare variables
+
+# and declare variables as 
+
+# [local:vars]
+# COURSE=DevOps
+# TRAINER=Siva
+
+#note: here we use = instead of :

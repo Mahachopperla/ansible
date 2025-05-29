@@ -17,3 +17,7 @@
     - name: this is to print vars from prompt
       ansible.builtin.debug:
         msg:  " Hi {{ username }}, your password is {{ password }}"
+
+
+#so as we used vars_prompt it will ask us prompt to enter details
+
