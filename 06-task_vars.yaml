@@ -7,7 +7,7 @@
   tasks:
   - name: varibles from taks1
     vars:
-      COURSE: Ansible
+      COURSE: Ansible  #overriding variables declared globally
       TRAINER:  Kumar
     ansible.builtin.debug:
       msg:  "Hello this {{ COURSE }} course is trained by {{ TRAINER }}"
@@ -15,4 +15,21 @@
   - name: varibles from taks2
     ansible.builtin.debug:
       msg:  "Hello this {{ COURSE }} course is trained by {{ TRAINER }}"
+
+
+# we can declare variables within the task also
+# whenever a task has it's own variables declared then 1st preference will go to it's own variables
+# if variables are not declared within the task then only global variables will come into action
+#in above example we have 2 tasks
+# in task1:
+# has it's own variables so it uses them whenever we call them
+# in task2:
+# it doesn't have it's own variables. so it uses global variables when required.
+
+
+# ***************    INHERITANCE  *************************
+
+# This concept is called INHERITANCE
+# In Ansible, variable inheritance (or precedence) refers to how and where variables are defined and which ones take priority when there's overlap.
+
 
