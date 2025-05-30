@@ -9,5 +9,5 @@
     - name: split function  #used to split string based on specific parameters
       vars:
         names:  "ramesh,rakesh,rajesh"
-      ansible.builtin.debug:
+      ansible.builtin.split:
         msg:  "{{ names | split(',')}}"
