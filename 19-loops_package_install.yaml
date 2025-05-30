@@ -1,6 +1,7 @@
 - name: installing multiple packages using loops
   hosts:  local
   connection: local
+  become: yes
   tasks:
     - name: installing packages
       loop:
@@ -10,4 +11,3 @@
       ansible.builtin.package:
         name: "{{ item }}"
         state: present
-        
