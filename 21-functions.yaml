@@ -42,6 +42,6 @@
 
     - name: ansible.utils.ipaddr function
       vars:
-        ip: "898.686.890.676" 
+        ip: "172.43.2.45" 
       ansible.builtin.debug:
         msg:  " ip is..{{ ip | ansible.utils.ipaddr }} "
