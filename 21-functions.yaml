@@ -27,3 +27,8 @@
           - { "key": "duration", "value": "50hrs"}
       ansible.builtin.debug:
         msg:  "{{ COURSE | items2dict  }}"
+
+    - name: upper function 
+      ansible.builtin.debug:
+        name: "lakshmi"
+        msg:  " Hi..{{ name | upper )}} "
