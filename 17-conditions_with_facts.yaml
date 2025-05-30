@@ -1,0 +1,15 @@
+- name: control the flow with ansible facts
+  hosts:  local
+  connection: local
+  tasks:
+    - name: install nginx if os_family is redhat
+      when: ansible_os_family == "RedHat"   #in ansible_facts list u can see os_family var holds info of os type. so here ansbile_os_family refers to os_family in ansible_Facts
+      ansible.builtin.dnf:
+        name: nginx
+        state:  present
+
+    - name: install nginx if os_family is debian
+      when: ansible_os_family == "Debian"
+      ansible.builtin.apt:
+        name: nginx
+        state:  present
