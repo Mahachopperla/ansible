@@ -28,8 +28,8 @@
       ansible.builtin.debug:
         msg:  "{{ COURSE | items2dict  }}"
 
-    - name: upper function 
-      ansible.builtin.debug:
+    - name: upper function
       vars:
-        name: "lakshmi"
+        name: "lakshmi" 
+      ansible.builtin.debug:
         msg:  " Hi..{{ name | upper }} "
