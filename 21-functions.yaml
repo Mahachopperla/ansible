@@ -1,7 +1,13 @@
-- name: default function usecase
+- name: function usecase
   hosts:  local
   connection: local
   tasks:
-    - name: default function
+    - name: default function # it is used when a variable declaration is not necessary and we wanted to skip var declaration
       ansible.builtin.debug:
         msg:  " Hi..{{ person | default('ramesh')}} "
+
+    - name: split function  #used to split string based on specific parameters
+      vars:
+        names:  "ramesh,rakesh,rajesh"
+      ansible.builtin.debug:
+        msg:  "{{ names | split(',')}}"
