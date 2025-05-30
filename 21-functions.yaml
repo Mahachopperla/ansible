@@ -31,4 +31,4 @@
     - name: upper function 
       ansible.builtin.debug:
         name: "lakshmi"
-        msg:  " Hi..{{ name | upper )}} "
+        msg:  " Hi..{{ name | upper }} "
