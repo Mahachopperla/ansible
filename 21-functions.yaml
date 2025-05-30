@@ -30,5 +30,6 @@
 
     - name: upper function 
       ansible.builtin.debug:
+      vars:
         name: "lakshmi"
         msg:  " Hi..{{ name | upper }} "
