@@ -1,0 +1,9 @@
+- name: printing ansible facts
+  hosts:  local
+  connection: local
+  tasks:
+    - name: printing facts information
+      ansible.builtin.debug:
+        msg:  "{{ ansible_facts }}"   #ansible_facts is a default variable which holds facts info
+
+        
