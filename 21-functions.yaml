@@ -33,3 +33,9 @@
         name: "lakshmi" 
       ansible.builtin.debug:
         msg:  " Hi..{{ name | upper }} "
+
+    - name: lower function
+      vars:
+        name: "LAKSHMI" 
+      ansible.builtin.debug:
+        msg:  " Hi..{{ name | lower }} "
