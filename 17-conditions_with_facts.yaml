@@ -9,13 +9,6 @@
         name: nginx
         state:  present
 
-    - name: nginx service start
-      ansible.builtin.service:
-        name: nginx
-        state:  started
-
-
-
     - name: install nginx if os_family is debian
       when: ansible_os_family == "Debian"
       ansible.builtin.apt:
