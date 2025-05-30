@@ -19,3 +19,11 @@
           DURATION: 50hrs
       ansible.builtin.debug:
         msg:  "{{ COURSE | dict2items }}"
+
+    - name: items2dict usecase
+      vars:
+        COURSE:
+          - { "key": "name", "value": "DevOps"}
+          - { "key": "duration", "value": "50hrs"}
+      ansible.builtin.debug:
+        msg:  "{{ COURSE | items2dict  }}"
