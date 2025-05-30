@@ -39,3 +39,9 @@
         name: "LAKSHMI" 
       ansible.builtin.debug:
         msg:  " Hi..{{ name | lower }} "
+
+    - name: ansible.utils.ipaddr function
+      vars:
+        ip: "898.686.890.676" 
+      ansible.builtin.debug:
+        msg:  " ip is..{{ ip | ansible.utils.ipaddr }} "
