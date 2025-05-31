@@ -3,4 +3,5 @@
   connection: local
   tasks:
     - name: redirecting output to a file
-      ansible.builtin.command: " ls -ltr > /tmp/output.txt"
+      #ansible.builtin.command: " ls -ltr > /tmp/output.txt" # this will trigger error cause command module works for only basic linix commands .it wont work for complex things such as redirections
+      ansible.builtin.shell: " ls -ltr > /tmp/output.txt"
