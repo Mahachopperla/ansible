@@ -5,3 +5,24 @@
     - name: redirecting output to a file
       #ansible.builtin.command: " ls -ltr > /tmp/output.txt" # this will trigger error cause command module works for only basic linix commands .it wont work for complex things such as redirections
       ansible.builtin.shell: " ls -ltr > /tmp/output.txt"
+      register: " command_result "  
+ 
+    - name: printing output
+      ansible.builtin.debug:
+        msg:  " {{ command_result }}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # here register is a keyword and command result is variable name which stores output of above executed command
+  #in ansible to check if comnd executed by command module is succeeded or not we use register keyword and variable
+  #let's print output of command_result to check if cmnd is succeeded or not
