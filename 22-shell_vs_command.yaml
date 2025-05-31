@@ -1,0 +1,6 @@
+- name: ansible shell vs module
+  hosts:  local
+  connection: local
+  tasks:
+    - name: redirecting output to a file
+      ansible.builtin.command: " ls -ltr > /tmp/output.txt"
