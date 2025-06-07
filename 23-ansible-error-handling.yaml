@@ -14,10 +14,10 @@
 - name: creating user if not existing
   # ansible.builtin.debug:
   #   msg:  "user not there hence creating user roboshop"
-  when: result.rc != 0
   ansible.builtin.command:  useradd roboshop
+  when: result.rc != 0
 
 - name: if user existing
-  when: result.rc ==0
   ansible.builtin.debug:
     msg:  "user already existing"
+  when: result.rc ==0
