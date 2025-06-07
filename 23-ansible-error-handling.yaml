@@ -12,11 +12,12 @@
 #now based on result code in output we need to perform next action
 
 - name: creating user if not existing
-  ansible.builtin.debug:
-    msg:  "user not there hence creating user roboshop"
+  # ansible.builtin.debug:
+  #   msg:  "user not there hence creating user roboshop"
   when: result.rc != 0
   ansible.builtin.command:  useradd roboshop
 
 - name: if user existing
+  when: result.rc ==0
   ansible.builtin.debug:
     msg:  "user already existing"
