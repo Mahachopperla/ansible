@@ -1,6 +1,6 @@
 - name: ansible error handling
   hosts:  local
-  connectin:  local
+  connection:  local
   tasks:
     - name: check user existing or not
       ansible.builtin.command:  id roboshop  
