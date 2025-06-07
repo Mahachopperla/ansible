@@ -9,6 +9,7 @@
 
 
     - name: creating user if not existing
+      become: yes
       when: result.rc != 0
       ansible.builtin.command:  useradd roboshop
       
