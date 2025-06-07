@@ -6,18 +6,22 @@
       ansible.builtin.command:  id roboshop  
       register: result
       ignore_errors:  true
+
+
+    - name: creating user if not existing
+      when: result.rc != 0
+      ansible.builtin.debug:
+        msg:  "user not there hence creating user roboshop"
+      ansible.builtin.command:  useradd roboshop
+      
+
+    - name: if user existing
+      when: result.rc ==0
+      ansible.builtin.debug:
+        msg:  "user already existing"
+      
+
 #if user not existing command module will throw error so to handle that we need error handler
 #we want ansible not to stop execution even if error triggered. we are just capturing output of command in var 
 
 #now based on result code in output we need to perform next action
-
-- name: creating user if not existing
-  # ansible.builtin.debug:
-  #   msg:  "user not there hence creating user roboshop"
-  ansible.builtin.command:  useradd roboshop
-  when: result.rc != 0
-
-- name: if user existing
-  ansible.builtin.debug:
-    msg:  "user already existing"
-  when: result.rc ==0
