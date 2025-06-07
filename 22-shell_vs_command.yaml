@@ -26,3 +26,7 @@
  # here register is a keyword and command result is variable name which stores output of above executed command
   #in ansible to check if comnd executed by command module is succeeded or not we use register keyword and variable
   #let's print output of command_result to check if cmnd is succeeded or not
+
+  #by using register and keyword assigned to it we can see 
+  #whether command is executed successfully or not from ansible server terminal only
+  # no need to login to target server and check
