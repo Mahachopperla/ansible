@@ -12,3 +12,9 @@ hostnames:
 
 # compose:
 #   ansible_host: private-ip-address
+
+keyed_groups:
+  # add hosts to tag_Name_value groups for each aws_ec2 host's tags.Name variable.
+  - key: tags.Name #whatever the tag name we are filtering with. same name will be assigned
+    prefix: ""
+    separator: ""
