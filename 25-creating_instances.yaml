@@ -1,0 +1,20 @@
+- name: create instances in aws and update route53 records
+  hosts:  localhost
+  connection: local
+  vars:
+    instance_name:
+      - frontend
+      - mongodb
+    sg_id:  sg-03de6c7ee76a1f5a3
+    subnet_id:  subnet-00d562368640b9663
+    ami:  ami-09c813fb71547fc4f
+  tasks:
+    - name: create an instance
+      amazon.aws.ec2_instance:
+        name: "{{ item }}"
+        vpc_subnet_id:  "{{ subnet_id }}"
+        security_group: "{{ sg_id }}"
+        instance_type: t3.micro
+        image_id: "{{ ami }}"
+      loop:
+        "{{ instance_name }}"
