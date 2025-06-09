@@ -18,3 +18,8 @@
         image_id: "{{ ami }}"
       loop:
         "{{ instance_name }}"
+      register: result
+    
+    - name: priting output
+      ansible.builtin.debug:
+        msg: "{{ result }}"
