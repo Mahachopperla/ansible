@@ -53,6 +53,6 @@
         overwrite: true
       loop:
         "{{ output.results }}"
-      when: item.item == frontend
+      when: item.item == "frontend"
 
        
