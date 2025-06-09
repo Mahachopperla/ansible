@@ -31,7 +31,7 @@
         zone: "{{ zone_name }}"  #hosted zone
         record: "{{ item.item }}.{{ zone_name }}"
         type: A
-        ttl: 300
+        ttl: 1
         value:  "{{ item.instances[0].private_ip_address }}"
         wait: true
         overwrite: true
@@ -41,17 +41,18 @@
 
     - name: updating route53
       tags:
-        -route53
+        - route53
       amazon.aws.route53:
         state: present
         zone: "{{ zone_name }}"  #hosted zone
         record: "{{ item.item }}.{{ zone_name }}"
         type: A
-        ttl: 300
+        ttl: 1
         value:  "{{ item.instances[0].public_ip_address }}"
         wait: true
         overwrite: true
-      loop: "{{ output.results }}"
+      loop: 
+        "{{ output.results }}"
       when: item.item == "frontend"
 
        
