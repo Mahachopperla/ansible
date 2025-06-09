@@ -32,7 +32,7 @@
         record: "{{ item.item }}.{{ zone_name }}"
         type: A
         ttl: 300
-        value:  "{{ item.instance[0].private_ip_address }}"
+        value:  "{{ item.instances[0].private_ip_address }}"
         wait: true
         overwrite: true
       loop:
