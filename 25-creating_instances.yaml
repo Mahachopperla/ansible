@@ -5,6 +5,15 @@
     instance_name:
       - frontend
       - mongodb
+      - redis
+      - mysql
+      - rabbitmq
+      - catalogue
+      - user
+      - cart
+      - payment
+      - shipping
+
     sg_id:  sg-03de6c7ee76a1f5a3
     subnet_id:  subnet-00d562368640b9663
     ami:  ami-09c813fb71547fc4f
